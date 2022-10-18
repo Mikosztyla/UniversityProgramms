@@ -13,3 +13,7 @@ def if_palindrom(n, s):
 n = int(input())
 print(f"Czy liczba {n} jest palindromem w systemie 10: ", if_palindrom(n, 10))
 print(f"Czy liczba {n} jest palindromem w systemie 2: ", if_palindrom(n, 2))
+
+# a = "1234"
+# a = a[::-1]
+# print(a)
