@@ -4,7 +4,6 @@ for i in range(1, 100):
         a, b = i, j
         while a < 2030:
             if a == 2022:
-                print("jooooo")
                 print(i, j)
             a, b = b, a+b
 
