@@ -17,7 +17,7 @@ for i in masks:
     liczba = 0
     iterator = 0
     for j in range(ilosc_cyfr):
-        if i%2 == 1:
+        if i % 2 == 1:
             liczba = liczba * 10 + cyfry[iterator]
         iterator += 1
         i = i >> 1
