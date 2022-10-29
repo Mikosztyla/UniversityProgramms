@@ -1,24 +1,20 @@
-def change_system(x, s):
-    t = [0 for i in range(64)]
-    iterator = 0
-    while x > 0:
-        t[iterator] = x % s
-        x //= s
-        iterator += 1
-
-    for i in range(iterator-1, -1, -1):
-        print("0123456789ABCDEF"[t[i]], end="")
-
-
-def is_different(a, b):
-    digits = [0 for i in range(10)]
+def is_different(a, b, s):
+    digits = [0 for i in range(s)]
     while a > 0:
-        digits[a % 10] += 1
-        a //= 10
+        digits[a % s] += 1
+        a //= s
     while b > 0:
-        if digits[b % 10] != 0:
+        if digits[b % s] != 0:
             return False
-        b //= 10
+        b //= s
     return True
 
-print(is_different(123, 345))
+a = 123
+b = 522
+
+for i in range(2, 17):
+    if is_different(a, b, i):
+        print(i)
+        break
+else:
+    print("Nie istnieje taka podstawa")
