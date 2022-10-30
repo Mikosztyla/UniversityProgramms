@@ -110,5 +110,5 @@ def check_if_armstrong(s, a, d, x):
     return True
 
 start_time = time.time()
-combinations(39)
+combinations(13)
 print("--- %s seconds ---" % (time.time() - start_time))
