@@ -42,6 +42,7 @@ cols = [0 for _ in range(n)]
 get_sums(rows, cols, tab, n)
 
 # print()
+# print()
 # print(cols)
 # print(rows)
 max_col_sum = get_max(cols, n)
