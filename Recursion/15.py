@@ -62,7 +62,7 @@ def problem_hetmanow(tab, k = 0, res=[]):
     global licznik
     if k < 8:
         for i in range(8):
-            if tab[i][k] ==  0:
+            if tab[i][k] == 0:
                 mem_tab = [[0 for _ in range(8)] for _ in range(8)]
                 rem_tab(tab, mem_tab)
                 fill_tab(tab, i, k)
