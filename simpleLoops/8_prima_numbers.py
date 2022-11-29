@@ -1,6 +1,6 @@
 import math
 
-n = 3071
+n = 10001
 d = 0
 for i in range(2, int(math.sqrt(n))+1):
     if n%i == 0:

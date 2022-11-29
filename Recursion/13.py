@@ -50,20 +50,22 @@
 #         rozloz2(num, 0, res)
 
 def f(n):
-    parts=[]
+    parts = []
 
-    def rec(n,maxi=n,t=[]):
+    def rec(n, maxi=n, t=None):
+        if t is None:
+            t = []
         nonlocal parts
-        if n==0:
-            parts+=[t]
+        if n == 0:
+            parts += [t]
             return
 
-        for i in range(1,min(n,maxi)+1):
-            rec(n-i,i,t+[i])
+        for i in range(1, min(n, maxi)+1):
+            rec(n-i, i, t+[i])
 
     rec(n)
     print(parts)
 
-f(4)
 
+f(4)
 # rozloz2(10, 0, [10])
