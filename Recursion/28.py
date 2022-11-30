@@ -26,10 +26,20 @@ def binary(tab):
 def check_tab(T, p=0, s1=0, s2=0, s3=0):
     if p == len(T):
         return s1 == s2 == s3
-    return check_tab(T, p+1, s1 + T[p], s2, s3) or check_tab(T, p+1, s1, s2 + T[p], s3) or check_tab(T, p+1, s1, s2, s3 + T[p])
+    if check_tab(T, p+1, s1 + T[p], s2, s3):
+        print("grupa 1:", tab[p])
+        return True
+    if check_tab(T, p+1, s1, s2 + T[p], s3):
+        print("grupa 2:", tab[p])
+        return True
+    if check_tab(T, p+1, s1, s2, s3 + T[p]):
+        print("grupa 3:", tab[p])
+        return True
+    return False
 
 
-tab = [random.randint(1, 10) for _ in range(10)]
+#tab = [random.randint(1, 10) for _ in range(10)]
+tab = [2, 3, 5, 7, 15]
 print(tab)
 result = []
 binary(tab)
