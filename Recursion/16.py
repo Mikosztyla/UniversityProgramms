@@ -26,14 +26,12 @@ def wyraz(s1, s2):
             return True
 
         for i in range(p, len(s)):
-            #current_s += s[i]
             if sprawdz(s, current_s + s[i], i+1):
                 return True
-            #current_s = current_s[:-1]
         return False
 
     return sprawdz(s2, "", 0)
 
 
-print(wyraz("ula", "kkasdesxgaer"))
+print(wyraz("ula", "ekkasdsxgarsssse"))
 

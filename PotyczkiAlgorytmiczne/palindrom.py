@@ -28,7 +28,7 @@ def palindrom(slowo, n, letter, take_additional):
     print(result)
 
 
-slowo = "bbbabababba"
+slowo = "aaaababaabb"
 ilosc_a = 0
 for s in slowo:
     if s == 'a':

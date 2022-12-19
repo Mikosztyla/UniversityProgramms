@@ -62,18 +62,18 @@ def sumy(T, tab, suma, p=0):
                     rem_tab(tab, mem_tab)
                     fill_tab(tab, i, j)
                     if suma == T[i][j]:
-                        print(T[i][j], i, j)
+                        print(T[i][j], "  ", i, j)
                         return True
                     if suma - T[i][j] > 0:
                         if sumy(T, tab, suma - T[i][j], i+1):
-                            print(T[i][j], i, j)
+                            print(T[i][j], "  ", i, j)
                             return True
                     rem_tab(mem_tab, tab)
     return False
 
 
 tab = [[False for _ in range(8)] for _ in range(8)]
-#T = [[random.randint(1, 9) for _ in range(8)] for _ in range(8)]
+# T = [[random.randint(1, 9) for _ in range(8)] for _ in range(8)]
 T = [
 [5, 5, 2, 2, 5, 9, 2, 4],
 [2, 2, 1, 8, 8, 2, 6, 4],
