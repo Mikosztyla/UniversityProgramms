@@ -540,6 +540,105 @@ def p25_last_node_before_cycle(p):
 # p27 = p3
 
 
+def p28_delete_same_elements(p1, p2):
+    if p1 is None and p2 is None:
+        return None
+    q1 = p1
+    s = None
+    q2 = p2
+    res = 0
+    while q2:
+        q1 = p1
+        s = None
+        while q1 and q2.value > q1.value:
+            s = q1
+            q1 = q1.next
+        k = q2
+        q2 = q2.next
+        if s is None:
+            k.next = p1
+            p1 = k
+        else:
+            l = s.next
+            s.next = k
+            k.next = l
+    res = 0
+    q = p1
+    l = None
+    last = None
+    first = None
+    cnt = 1
+    while q:
+        if q.value == last:
+            cnt += 1
+        else:
+            if cnt >= 2:
+                if first is None:
+                    p1 = q
+                else:
+                    first.next = q
+                res += cnt
+            first = l
+            last = q.value
+            cnt = 1
+        l = q
+        q = q.next
+    if cnt >= 2:
+        first.next = None
+        res += cnt
+    print(res)
+    return p1
+
+
+def p29_delete_different_elements(p1, p2):
+    if p1 is None and p2 is None:
+        return None
+    q1 = p1
+    s = None
+    q2 = p2
+    res = 0
+    while q2:
+        q1 = p1
+        s = None
+        while q1 and q2.value > q1.value:
+            s = q1
+            q1 = q1.next
+        k = q2
+        q2 = q2.next
+        if s is None:
+            k.next = p1
+            p1 = k
+        else:
+            l = s.next
+            s.next = k
+            k.next = l
+    res = 0
+    q = p1
+    last = None
+    first = None
+    cnt = 1
+    print_forward(p1)
+    while q:
+        if q.value == last:
+            first = q
+            cnt += 1
+        else:
+            if cnt == 1:
+                if first is None:
+                    p1 = q
+                else:
+                    first.next = q
+                    res += 1
+            last = q.value
+            cnt = 1
+        q = q.next
+    if cnt == 1:
+        first.next = None
+        res += 1
+    print(res)
+    return p1
+
+
 def p30_make_uniq_list_from_two(p1, p2):
     # p1 is sorted
     q2 = p2
@@ -566,8 +665,9 @@ def p30_make_uniq_list_from_two(p1, p2):
 p1 = Node()
 p1 = tab_to_list([1, 4, 7, 9, 14, 35])
 p2 = Node()
-p2 = tab_to_list([9, 0, 9, 3, 0, 50, 50])
+p2 = tab_to_list([9, 0, 9, 3, 0, 50, 50, 60, 70, 80, 99, 1])
 print_forward(p1)
 print_forward(p2)
-p1 = p30_make_uniq_list_from_two(p1, p2)
+print()
+p1 = p29_delete_different_elements(p1, p2)
 print_forward(p1)
