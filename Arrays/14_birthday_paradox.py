@@ -1,5 +1,5 @@
 
-for i in range(20, 41):
+for i in range(20, 55):
     comb = i * (i - 1) / 2
     r_prob = pow(364/365, comb)
     prob = 1 - r_prob
