@@ -14,9 +14,9 @@ def heapify(tab, i, n):
     l = left(i)
     r = right(i)
     max_i = i
-    if l < n and tab[l] > tab[max_i]:
+    if l < n and tab[l] < tab[max_i]:
         max_i = l
-    if r < n and tab[r] > tab[max_i]:
+    if r < n and tab[r] < tab[max_i]:
         max_i = r
 
     if max_i != i:
