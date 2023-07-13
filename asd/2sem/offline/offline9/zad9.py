@@ -1,3 +1,10 @@
+# Mikołaj Gosztyła
+# Mój algorytm dla każdej stacji od najmniejszego indeksu do największego obliczy najmniejszy koszt dojechania
+# do niej, bazując na informacjach o najniższym koszcie dojechania do poprzednich stacji, przetrzymywanych w 4
+# kolejkach priorytetowych. W ten sposób, jeśli dodamy sztuczną stację o indeksie L i koszcie 0, obliczymy
+# najmniejszy koszt przejazdu. Dla n stacji musimy wyciągnąć co najmniej 4 wartości z kolejek, żeby obliczyć poprawny
+# wynik, dlatego jego złożoność to O(n * 4 * logn) = O(n * logn).
+
 from zad9testy import runtests
 from queue import PriorityQueue
 
